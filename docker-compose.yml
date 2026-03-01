@@ -1,0 +1,18 @@
+services:
+  a2bs-server:
+    build:
+      context: ./services/a2bs-server
+    container_name: xrb-a2bs-server
+    environment:
+      A2BS_STUB: ${A2BS_STUB:-1}
+      A2BS_CHECKPOINT_PATH: /models/simplenet1.pth
+    ports:
+      - '8765:8765'
+    volumes:
+      - ./.local/a2bs/ckpt:/models:ro
+    healthcheck:
+      test: ['CMD', 'python', '-c', "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8765/health', timeout=2)"]
+      interval: 10s
+      timeout: 3s
+      retries: 5
+      start_period: 5s
