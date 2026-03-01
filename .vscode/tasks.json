@@ -1,0 +1,66 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Lab: Start Dev Server",
+      "type": "shell",
+      "command": "pnpm dev",
+      "isBackground": true,
+      "problemMatcher": {
+        "owner": "custom",
+        "pattern": [
+          {
+            "regexp": "^(.*):(\\d+):(\\d+):\\s+(error|warning)\\s+(.*)$",
+            "file": 1,
+            "line": 2,
+            "column": 3,
+            "severity": 4,
+            "message": 5
+          }
+        ],
+        "background": {
+          "activeOnStart": true,
+          "beginsPattern": "Starting",
+          "endsPattern": "Ready"
+        }
+      },
+      "presentation": {
+        "reveal": "always",
+        "panel": "dedicated",
+        "clear": true
+      },
+      "options": {
+        "cwd": "${workspaceFolder}"
+      }
+    },
+    {
+      "label": "Lab: Open Dev Browser",
+      "type": "shell",
+      "command": "open http://localhost:3000",
+      "problemMatcher": [],
+      "presentation": {
+        "reveal": "never",
+        "panel": "shared"
+      }
+    },
+    {
+      "label": "Lab: Start + Open Browser",
+      "dependsOrder": "sequence",
+      "dependsOn": [
+        "Lab: Start Dev Server",
+        "Lab: Open Dev Browser"
+      ],
+      "problemMatcher": []
+    },
+    {
+      "label": "Lab: Stop Dev Server",
+      "type": "shell",
+      "command": "for port in 3000 3001; do pids=$(lsof -ti tcp:$port -sTCP:LISTEN 2>/dev/null || true); if [ -n \"$pids\" ]; then echo $pids | xargs kill; fi; done",
+      "problemMatcher": [],
+      "presentation": {
+        "reveal": "always",
+        "panel": "shared"
+      }
+    }
+  ]
+}
