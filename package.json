@@ -1,0 +1,16 @@
+{
+  "name": "xrealitybytes-v2",
+  "private": true,
+  "packageManager": "pnpm@10.17.1",
+  "scripts": {
+    "dev": "pnpm --filter @xrb/web dev",
+    "build": "pnpm --filter @xrb/web build",
+    "lint": "pnpm --filter @xrb/web lint",
+    "typecheck": "pnpm --filter @xrb/web typecheck",
+    "format": "prettier --write .",
+    "new:experiment": "node scripts/new-experiment.mjs"
+  },
+  "devDependencies": {
+    "prettier": "^3.6.2"
+  }
+}
