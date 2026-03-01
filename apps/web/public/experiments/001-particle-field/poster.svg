@@ -1,0 +1,8 @@
+<svg width="1200" height="720" viewBox="0 0 1200 720" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="720" fill="#020617"/>
+  <circle cx="230" cy="180" r="220" fill="#0E7490" fill-opacity="0.35"/>
+  <circle cx="980" cy="560" r="280" fill="#22D3EE" fill-opacity="0.24"/>
+  <text x="96" y="340" fill="#E2E8F0" font-size="54" font-family="'Avenir Next', sans-serif" font-weight="700">Experiment 001</text>
+  <text x="96" y="400" fill="#67E8F9" font-size="28" font-family="'IBM Plex Mono', monospace">Compute-Driven Particle Field</text>
+  <text x="96" y="448" fill="#94A3B8" font-size="20" font-family="'Avenir Next', sans-serif">Static fallback mode: GPU APIs unavailable on this device/browser.</text>
+</svg>

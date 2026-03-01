@@ -1,0 +1,19 @@
+{
+  "title": "Experiment 001: Compute-Driven Particle Field",
+  "slug": "001-particle-field",
+  "date": "2026-03-01",
+  "tags": ["WebGPU", "Compute Shader", "Particles", "Fallback Architecture"],
+  "description": "A WebGPU-first particle system with compute-driven simulation, a WebGL2 fallback, and static compatibility mode.",
+  "whatDemonstrates": [
+    "WebGPU compute pass updates particle velocity and position each frame.",
+    "Graceful renderer tier fallback: WebGPU -> WebGL2 -> static.",
+    "Unified diagnostics stream for FPS, frame time, and capability reporting.",
+    "Prompt and pointer inputs influencing runtime simulation parameters."
+  ],
+  "sourcePath": "experiments/001-particle-field",
+  "capabilities": {
+    "webgpu": true,
+    "webgl2": true,
+    "static": true
+  }
+}
