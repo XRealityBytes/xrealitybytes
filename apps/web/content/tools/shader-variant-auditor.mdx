@@ -1,0 +1,27 @@
+---
+title: "Shader Variant Auditor"
+platform: "CLI"
+summary: "Inspect and report shader variant explosion risk before deployment to mixed hardware targets."
+status: "beta"
+links:
+  - label: "Source"
+    href: "https://github.com/xrealitybytes/shader-variant-auditor"
+  - label: "Reference Output"
+    href: "https://xrealitybytes.com/docs/shader-auditor"
+---
+
+## Overview
+
+Shader Variant Auditor scans generated shader permutations and flags high-risk branches that can inflate warmup costs or trigger runtime compilation spikes.
+
+## Why It Matters
+
+Renderer teams often discover variant pressure late, when performance budgets are already tight. This tool shifts that feedback left by making variant growth visible during CI.
+
+## Output
+
+Each run produces:
+
+- Variant counts by material family.
+- Top conditional features by cardinality impact.
+- Recommended merge strategies for reducing branch combinations.

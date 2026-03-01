@@ -1,0 +1,14 @@
+{
+  "name": "@xrb/config",
+  "version": "0.0.0",
+  "private": true,
+  "files": [
+    "eslint",
+    "tsconfig"
+  ],
+  "exports": {
+    "./eslint/next": "./eslint/next.json",
+    "./eslint/next-flat": "./eslint/next.mjs",
+    "./tsconfig/base": "./tsconfig/base.json"
+  }
+}

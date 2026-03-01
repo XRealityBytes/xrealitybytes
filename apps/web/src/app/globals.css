@@ -1,0 +1,69 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+  --font-sans: 'Avenir Next', Manrope, Sora, 'Segoe UI', sans-serif;
+  --font-mono: 'IBM Plex Mono', 'SF Mono', 'JetBrains Mono', ui-monospace, monospace;
+  --color-bg: #030711;
+  --color-fg: #e5e7eb;
+  --color-card: rgba(15, 23, 42, 0.65);
+  --color-accent: #22d3ee;
+  --color-muted: #94a3b8;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color-scheme: light;
+    --color-bg: #f8fafc;
+    --color-fg: #0f172a;
+    --color-card: rgba(255, 255, 255, 0.9);
+    --color-accent: #0891b2;
+    --color-muted: #475569;
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  min-height: 100%;
+}
+
+body {
+  background-color: var(--color-bg);
+  color: var(--color-fg);
+  font-family: var(--font-sans), sans-serif;
+  line-height: 1.5;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.prose {
+  --tw-prose-body: rgb(203 213 225);
+  --tw-prose-headings: rgb(248 250 252);
+  --tw-prose-links: rgb(34 211 238);
+  --tw-prose-bold: rgb(248 250 252);
+  --tw-prose-bullets: rgb(100 116 139);
+  --tw-prose-quotes: rgb(226 232 240);
+  --tw-prose-hr: rgb(51 65 85);
+}
+
+@media (prefers-color-scheme: light) {
+  .prose {
+    --tw-prose-body: rgb(30 41 59);
+    --tw-prose-headings: rgb(15 23 42);
+    --tw-prose-links: rgb(14 116 144);
+    --tw-prose-bold: rgb(15 23 42);
+    --tw-prose-bullets: rgb(71 85 105);
+    --tw-prose-quotes: rgb(51 65 85);
+    --tw-prose-hr: rgb(203 213 225);
+  }
+}

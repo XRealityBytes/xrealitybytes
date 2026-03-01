@@ -1,0 +1,44 @@
+---
+title: "Live Performance Avatars for Hybrid Events"
+date: "2025-08-02"
+summary: "A low-latency avatar performance stack combining motion signals, procedural effects, and web delivery for hybrid stage + stream events."
+tags:
+  - Generative Media
+  - Real-time Avatars
+  - Live Events
+heroImage: "/og/work-avatars.svg"
+---
+
+## Challenge
+
+The production team needed a browser-delivered avatar system that could react to live performer input and remain stable under varying venue network conditions. Existing tools either looked rigid or failed under load.
+
+## Architecture
+
+The platform blended three subsystems:
+
+- Motion input normalization from mixed capture sources.
+- Procedural visual modulation driven by audio and gesture features.
+- Delivery orchestration that switched quality profiles based on live telemetry.
+
+A strict frame budget was enforced with adaptive effect scheduling so visual richness could scale without introducing frame spikes.
+
+## Reliability Features
+
+To keep the experience predictable in live production:
+
+- Quality levels were switched through deterministic state transitions.
+- Critical scenes had pre-warmed shader variants.
+- Every show session captured timing and error metrics for post-mortem review.
+
+## Impact
+
+Across a multi-city rollout:
+
+- Median motion-to-photon latency stayed below **58 ms**.
+- Show-stopping rendering incidents were reduced to **zero**.
+- Creative operators built reusable scene presets, cutting show prep by **35%**.
+
+## What Changed
+
+Moving from a single “hero look” to a system of constrained, composable visual modules made the platform more robust and easier for non-engineer operators to run.

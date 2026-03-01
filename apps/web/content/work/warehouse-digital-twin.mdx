@@ -1,0 +1,47 @@
+---
+title: "Warehouse Digital Twin: From Prototype to Fleet Ops"
+date: "2025-11-18"
+summary: "A WebGPU-first digital twin for warehouse supervision with real-time telemetry overlays, progressive fallback, and measurable planning improvements."
+tags:
+  - WebGPU
+  - Digital Twin
+  - Operations
+heroImage: "/og/work-warehouse.svg"
+---
+
+## Context
+
+A logistics client needed a browser-based digital twin to monitor forklift movement, inventory hotspots, and route bottlenecks across three facilities. Their internal tools were static dashboards with no spatial context, so supervisors lacked confidence during peak windows.
+
+## System Design
+
+We built a layered rendering architecture with two goals:
+
+1. Keep interactions smooth in modern Chromium builds with WebGPU.
+2. Preserve visual continuity on fallback devices using WebGL.
+
+The scene stack combined:
+
+- Instanced geometry for moving fleet entities.
+- Streamed occupancy heatmaps refreshed in 2-second windows.
+- Event overlays for route conflicts and delayed picks.
+
+## Delivery Strategy
+
+The implementation shipped in phases:
+
+- **Phase 1:** rapid model and telemetry integration for a single site.
+- **Phase 2:** renderer optimization and runtime profiling instrumentation.
+- **Phase 3:** role-based views for operations, maintenance, and planning.
+
+## Outcomes
+
+After six weeks of production use:
+
+- Route conflict detection response improved by **38%**.
+- Planned pallet moves per hour increased by **22%**.
+- Incident review time dropped by **41%** due to shared spatial playback.
+
+## Notes
+
+The highest-leverage decision was standardizing a single data contract for spatial entities, so both the WebGPU and WebGL rendering paths consumed identical state updates.
